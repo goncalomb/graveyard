@@ -6,9 +6,9 @@ A place where code comes to die.
 
 DEAD repositories contain git-enabled projects that were never finished or published.
 
-* **DEAD-201402-NBTArchitect**: A single-page web application to edit NBT tags directly on the browser.
-* **DEAD-201407-KnotPHP**: A simple CMS in PHP.
-* **DEAD-201503-Andi4HTTP**: A neat directory index for HTTP (Apache).
+* [DEAD-201402-**NBTArchitect**](https://github.com/goncalomb/DEAD-201402-NBTArchitect): A single-page web application to edit NBT tags directly on the browser.
+* [DEAD-201407-**KnotPHP**](https://github.com/goncalomb/DEAD-201407-KnotPHP): A simple CMS in PHP.
+* [DEAD-201503-**Andi4HTTP**](https://github.com/goncalomb/DEAD-201503-Andi4HTTP): A neat directory index for HTTP.
 
 ## License ##
 

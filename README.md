@@ -2,6 +2,12 @@
 
 A place where code comes to die.
 
+Unfinished projects, random scripts and code snippets. To be consumed in moderation.
+
+This is my graveyard. Feel free to fork the repository, but **I'm not accepting Pull Requests**.
+
+You can also use `gravedigger.php` to manage your own graveyard (CLI script).
+
 ## DEAD repositories ##
 
 DEAD repositories contain git-enabled projects that were never finished or published.

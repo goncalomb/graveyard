@@ -21,3 +21,12 @@ DEAD repositories contain git-enabled projects that were never finished or publi
 Copyright (c) 2014-2017 Gonçalo Baltazar <me@goncalomb.com>
 
 The contents of DEAD repositories are released under the terms of the MIT License. See [LICENSE.txt](LICENSE.txt) for details.
+
+## File Index ##
+
+### 2017 ###
+* [pi-from-coprimes.php](2017/pi-from-coprimes.php) : 2017-03-14 : Generate pi from random coprimes.
+
+### 2016 ###
+* [avrmega.php](2016/avrmega.php) : 2016-10-20 : Web crawler for the Atmel megaAVR page.
+* [gmb.pt.html](2016/gmb.pt.html) : 2016-04-30 : Scrapped landing page for gmb.pt.

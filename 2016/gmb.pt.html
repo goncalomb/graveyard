@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<meta charset="UTF-8"/>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet" type="text/css"/>
+<script src="https://cdn.jsdelivr.net/jquery/3.0.0-beta1/jquery.min.js"></script>
+<style>
+h1 {
+  font-family: "Roboto Slab";
+  font-size: 70px;
+  text-align: center;
+}
+p {
+  font-family: "Roboto Slab";
+  text-align: center;
+}
+.caret {
+  border-right: 2px solid black;
+  margin-right: -2px;
+  animation: caret-animation 500ms alternate infinite linear;
+}
+@keyframes caret-animation {
+  0% { border-color: black; }
+  49% { border-color: black; }
+  50% { border-color: rgba(0, 0, 0, 0); }
+  100% { border-color: rgba(0, 0, 0, 0); }
+}
+</style>
+<script>
+$(document).ready(function() {
+  var caret = $(".caret")[0];
+  var before = caret.previousSibling;
+  var after = caret.nextSibling;
+  if (!before || before.nodeType != 3) {
+    before = document.createTextNode("");
+    caret.parentNode.insertBefore(before, caret);
+  }
+  if (!after || after.nodeType != 3) {
+    after = document.createTextNode("");
+    caret.parentNode.insertBefore(after, caret.nextSibling);
+  }
+  function move(i) {
+    if (i > 0) {
+      before.nodeValue += after.nodeValue.substr(0, i);
+      after.nodeValue = after.nodeValue.substr(i);
+    } else if (i < 0) {
+      after.nodeValue = before.nodeValue.substr(i) + after.nodeValue;
+      before.nodeValue = before.nodeValue.substring(0, before.nodeValue.length + i);
+    }
+  }
+  function backspace() {
+    before.nodeValue = before.nodeValue.substring(0, before.nodeValue.length - 1);
+  }
+  function write(s) {
+    before.nodeValue += s;
+  }
+  var frames = [
+    [move, -1], [move, -1], [move, -1], [move, -1], [move, -1],
+    [write, "o"], [write, "n"], [write, "c"], [write, "a"], [write, "l"], [write, "o"],
+    [move, 1], [move, 1], [move, 1], [move, 1], [move, 1],
+    [backspace], [backspace],
+    [write, "c"], [write, "o"], [write, "m"]
+  ];
+  var i = 0;
+  function loop() {
+    frames[i][0].apply(null, frames[i].slice(1));
+    if (++i < frames.length) {
+      setTimeout(loop, 100 + Math.random()*200);
+    } else {
+      setTimeout(function() {
+        caret.parentNode.removeChild(caret);
+      });
+    }
+  }
+  setTimeout(loop, 1500);
+});
+</script>
+</head>
+
+<body>
+<h1>gmb.pt<span class="caret"></span></h1>
+<p>Hi, this is a doorway to my website at <a href="http://goncalomb.com">goncalomb.com</a>. Go over there now!</p>
+<p>Gonçalo Baltazar<p>
+<p>hello@goncalomb.com</p>
+</body>
+
+</html>

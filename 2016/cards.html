@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<meta charset="UTF-8"/>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700" rel="stylesheet" type="text/css"/>
+<link href="https://cdn.jsdelivr.net/fontawesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<script src="https://cdn.jsdelivr.net/jquery/3.0.0-beta1/jquery.min.js"></script>
+<style>
+@page {
+	size: 210mm 297mm;
+}
+* {
+	box-sizing: border-box;
+}
+body {
+	width: 210mm;
+	font-family: "Roboto Slab";
+	font-size: 16px;
+	margin: 0 auto;
+	overflow-y: scroll;
+	text-align: center;
+}
+.card {
+	display: inline-block;
+	width: 85mm;
+	height: 55mm;
+	margin: 2mm;
+	padding: 0 5mm;
+	border: 1px solid #e2e2e2;
+	text-align: left;
+}
+.card .title {
+	font-weight: 300;
+	font-size: 25px;
+	margin-top: 2.1em;
+}
+.card .title p {
+	border-bottom: 0.75mm solid #a4a4a4;
+}
+.card .sub {
+	border-left: 0.75mm solid #a4a4a4;
+	padding-left: 1mm;
+}
+.card .sub p {
+	margin-top: 0.2em;
+	margin-bottom: 0.2em;
+}
+.card .light {
+	font-size: 0.9em;
+	color: #808080;
+}
+</style>
+<script>
+$(document).ready(function() {
+	var $body = $(document.body);
+	var $card = $(".card").clone();
+	$body.text("");
+	for (var i = 0; i < 10; i++) {
+		$body.append($card.clone());
+	}
+});
+</script>
+</head>
+
+<body>
+<div class="card">
+<div class="title">
+<p style="">Gonçalo Baltazar</p>
+</div>
+<div class="sub">
+<p><i class="fa fa-globe fa-fw"></i> goncalomb.com</p>
+<p><i class="fa fa-envelope-o fa-fw"></i> hello@goncalomb.com</p>
+<p><i class="fa fa-phone fa-fw"></i><span class="light">+351</span> 99 999 99 99</p>
+</div>
+</div>
+</body>
+
+</html>

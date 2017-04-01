@@ -29,4 +29,8 @@ DEAD repositories contain git-enabled projects that were never finished or publi
 
 ### 2016 ###
 * [avrmega.php](2016/avrmega.php) : 2016-10-20 : Web crawler for the Atmel megaAVR page.
+* [cards.html](2016/cards.html) : 2016-05-08 : Business card design.
 * [gmb.pt.html](2016/gmb.pt.html) : 2016-04-30 : Scrapped landing page for gmb.pt.
+
+### 2015 ###
+* [email.php](2015/email.php) : 2015-09-19 : HTML email obfuscator.

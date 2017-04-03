@@ -78,7 +78,7 @@ function store_new_file($name, $path) {
 		$data = read_index_file($dir_year . DIRECTORY_SEPARATOR . '_index.txt');
 		$data[$name] = array('mtime' => (int) $mtime, 'description' => array('*no description*'));
 		write_index_file($dir_year . DIRECTORY_SEPARATOR . '_index.txt', $data);
-		copy($path, $path_new);
+		rename($path, $path_new);
 	}
 }
 

@@ -1,2 +1,14 @@
+1431865534 psx-image.php
+# Helper script to dump PSX games.
+
+1431880302 ps2-image.php
+# Helper script to dump PS2 games.
+
+1432414213 compare.php
+# Compare two files.
+
+1432422945 ttdir.php
+# Script to track file changes and integrity.
+
 1442698726 email.php
 # HTML email obfuscator.

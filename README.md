@@ -28,9 +28,15 @@ DEAD repositories contain git-enabled projects that were never finished or publi
 * [pi-from-coprimes.php](2017/pi-from-coprimes.php) : 2017-03-14 : Generate pi from random coprimes.
 
 ### 2016 ###
+* [logev](2016/logev) : 2016-10-31 : Logger for day events (mobile terminal).
 * [avrmega.php](2016/avrmega.php) : 2016-10-20 : Web crawler for the Atmel megaAVR page.
 * [cards.html](2016/cards.html) : 2016-05-08 : Business card design.
 * [gmb.pt.html](2016/gmb.pt.html) : 2016-04-30 : Scrapped landing page for gmb.pt.
+* [sha1dir.php](2016/sha1dir.php) : 2016-01-09 : Another script to track integrity of files (compatible with sha1sum).
 
 ### 2015 ###
 * [email.php](2015/email.php) : 2015-09-19 : HTML email obfuscator.
+* [ttdir.php](2015/ttdir.php) : 2015-05-24 : Script to track file changes and integrity.
+* [compare.php](2015/compare.php) : 2015-05-23 : Compare two files.
+* [ps2-image.php](2015/ps2-image.php) : 2015-05-17 : Helper script to dump PS2 games.
+* [psx-image.php](2015/psx-image.php) : 2015-05-17 : Helper script to dump PSX games.

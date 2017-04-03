@@ -1,0 +1,97 @@
+#!/bin/bash
+
+EVENTS=(
+"wake" "sleep"
+"snack" "lunch" "dinner"
+"shower-start" "shower-stop"
+"home-enter" "home-exit"
+"ist-enter" "ist-exit"
+"bus-enter" "bus-exit"
+"cinema-start" "cinema-stop"
+)
+
+filtered_events=()
+
+function filter_events {
+	filtered_events=()
+	for event in "${EVENTS[@]}"; do
+		if [[ "$event" == "$filter"* ]]; then
+			filtered_events+=("$event")
+		fi
+	done
+}
+
+function echo_events {
+	i=1
+	for event in "${filtered_events[@]:0:9}"; do
+		echo "$i. $event"
+		((i++))
+	done
+}
+
+function save_event {
+	clear
+	echo "Event Logger"; echo
+	data="$1|$(date)"
+	echo "$data"; echo
+	echo -n "backspace to cancel, enter to save"
+	while read -rsn1 char; do
+		if [[ -z "$char" ]] || [[ "$char" =~ [0-9] ]]; then
+			break
+		elif [[ "$char" == $'\x7f' ]]; then
+			return
+		fi
+	done
+	clear
+	echo "$data" >> "log_events.txt"
+	echo "saved"
+	sleep 0.5
+	exit
+}
+
+first="TRUE"
+filter=""
+
+while true; do
+	clear
+
+	echo "Event Logger"; echo
+
+	if [[ -n "$first" ]] && [[ -f "log_events.txt" ]]; then
+		tail -n 5 "log_events.txt"; echo
+	fi
+	first=""
+
+	filter_events "$filter"
+	echo_events
+
+	if [[ -z "$filter" ]]; then
+		echo "0: EXIT"; echo
+		echo "or name new event"
+	else
+		echo "0: NEW EVENT ($filter)";
+	fi
+	echo
+
+	read -p "$filter" -rsn1 char
+	if [[ "$char" == $'\x7f' ]]; then
+		if [[ -n "$filter" ]]; then
+			filter="${filter:0:-1}"
+		fi
+	elif [[ "$char" =~ [a-z\-] ]]; then
+		filter="$filter$char"
+	elif [[ "$char" =~ [1-9] ]]; then
+		((i=$char-1))
+		event=${filtered_events[$i]}
+		if [[ -n "$event" ]]; then
+			save_event "$event"
+		fi
+	elif [[ "$char" == "0" ]]; then
+		clear
+		if [[ -z "$filter" ]]; then
+			clear; exit
+		else
+			save_event "$filter"
+		fi
+	fi
+done

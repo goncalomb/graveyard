@@ -1,3 +1,6 @@
+1452378392 sha1dir.php
+# Another script to track integrity of files (compatible with sha1sum).
+
 1462047790 gmb.pt.html
 # Scrapped landing page for gmb.pt.
 
@@ -6,3 +9,6 @@
 
 1476926001 avrmega.php
 # Web crawler for the Atmel megaAVR page.
+
+1477872310 logev
+# Logger for day events (mobile terminal).
